@@ -1,2 +1,15 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>All Schools</h1>
+
+<% @schools.each do |school| %>
+  <div class="school">
+    <h2><%= school.name %></h2>
+
+    <% school.students.each do |student| %>
+      <div class="student">
+        <h3><%= student.name %></h3>
+        <p>Student Number: <%= student.student_number %></p>
+        <!-- Eventually display student image here. -->
+      </div>
+    <% end %>
+  </div>
+<% end %>
